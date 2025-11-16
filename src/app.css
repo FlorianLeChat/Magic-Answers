@@ -1,0 +1,7 @@
+/* Importation du fichier de réinitialisation de Tailwind CSS */
+@import "tailwindcss/preflight.css";
+
+/* Corps de la page */
+body {
+	min-height: 100vh;
+}
