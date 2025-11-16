@@ -26,7 +26,6 @@ export default defineConfig(
 			},
 			parserOptions: {
 				parser: tslint.parser,
-				project: [ "./tsconfig.json" ],
 				svelteConfig,
 				projectService: true,
 				extraFileExtensions: [ ".svelte" ]
