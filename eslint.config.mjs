@@ -27,7 +27,6 @@ export default defineConfig(
 			parserOptions: {
 				parser: tslint.parser,
 				svelteConfig,
-				projectService: true,
 				extraFileExtensions: [ ".svelte" ]
 			}
 		},
