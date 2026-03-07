@@ -1,56 +1,59 @@
 {
-  "name": "magic-answers",
-  "type": "module",
-  "contributors": [
-	"Florian Trayon (https://github.com/FlorianLeChat)",
-	"Claire Mathé (https://www.linkedin.com/in/claire-math%C3%A9-ux-ui-designer-%E2%9C%AE/)"
-  ],
-  "license": "MIT",
-  "private": true,
-  "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/FlorianLeChat/Magic-Answers.git"
-  },
-  "bugs": {
-    "url": "https://github.com/FlorianLeChat/Magic-Answers/issues"
-  },
-  "devDependencies": {
-    "@types/eslint-plugin-jsx-a11y": "~6.10",
-    "husky": "~9.1",
-    "eslint": "~9.36",
-    "svelte": "~5.43",
-    "globals": "~16.5",
-    "prettier": "~3.6",
-    "typescript": "~5.9",
-    "tailwindcss": "~4.1",
-    "lint-staged": "~16.2",
-    "svelte-check": "~4.3",
-    "patch-package": "~8.0",
-    "@lucide/svelte": "~0.553",
-    "@tsconfig/svelte": "~5.0",
-    "@tailwindcss/vite": "~4.1",
-    "typescript-eslint": "~8.46",
-    "eslint-plugin-svelte": "~3.13",
-    "prettier-plugin-svelte": "~3.4",
-    "@stylistic/eslint-plugin": "~5.5",
-    "@sveltejs/vite-plugin-svelte": "~6.2"
-  },
-  "engines": {
-    "node": ">=20.0",
-    "npm": ">=9.6"
-  },
-  "scripts": {
-    "dev": "vite",
-    "lint": "eslint . --fix --ext .js,.ts,.svelte",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "build": "vite build",
-    "pretty": "prettier --write \"**/*.{js,ts,svelte}\"",
-    "preview": "vite preview",
-    "prepare": "husky",
-    "lint-staged": "lint-staged"
-  },
-  "browserslist": [
-    "defaults"
-  ]
+	"name": "magic-answers",
+	"type": "module",
+	"contributors": [
+		"Florian Trayon (https://github.com/FlorianLeChat)",
+		"Claire Mathé (https://www.linkedin.com/in/claire-math%C3%A9-ux-ui-designer-%E2%9C%AE/)"
+	],
+	"license": "MIT",
+	"private": true,
+	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/FlorianLeChat/Magic-Answers.git"
+	},
+	"bugs": {
+		"url": "https://github.com/FlorianLeChat/Magic-Answers/issues"
+	},
+	"devDependencies": {
+		"@types/eslint-plugin-jsx-a11y": "~6.10",
+		"husky": "~9.1",
+		"eslint": "~9.36",
+		"svelte": "~5.43",
+		"globals": "~16.5",
+		"prettier": "~3.6",
+		"typescript": "~5.9",
+		"tailwindcss": "~4.1",
+		"lint-staged": "~16.2",
+		"svelte-check": "~4.3",
+		"patch-package": "~8.0",
+		"@lucide/svelte": "~0.553",
+		"@commitlint/cli": "~20.4",
+		"@tsconfig/svelte": "~5.0",
+		"@tailwindcss/vite": "~4.1",
+		"typescript-eslint": "~8.46",
+		"eslint-plugin-svelte": "~3.13",
+		"prettier-plugin-svelte": "~3.4",
+		"@stylistic/eslint-plugin": "~5.5",
+		"@sveltejs/vite-plugin-svelte": "~6.2",
+		"@commitlint/config-conventional": "~20.4"
+	},
+	"engines": {
+		"node": ">=20.0",
+		"npm": ">=9.6"
+	},
+	"scripts": {
+		"dev": "vite",
+		"lint": "eslint . --fix --ext .js,.ts,.svelte",
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"build": "vite build",
+		"pretty": "prettier --write \"**/*.{js,ts,svelte}\"",
+		"preview": "vite preview",
+		"prepare": "husky",
+		"lint-staged": "lint-staged",
+		"commitlint": "commitlint --edit"
+	},
+	"browserslist": [
+		"defaults"
+	]
 }
