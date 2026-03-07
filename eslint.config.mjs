@@ -31,7 +31,6 @@ export default defineConfig(
 			}
 		},
 		rules: {
-			// Règles de base
 			"no-shadow": "off",
 			"camelcase": [
 				"error",
@@ -49,7 +48,6 @@ export default defineConfig(
 				}
 			],
 
-			// Règles de style
 			"@stylistic/semi": [ "error", "always" ],
 			"@stylistic/indent": [
 				"error",
@@ -113,10 +111,8 @@ export default defineConfig(
 			],
 			"@stylistic/computed-property-spacing": [ "error", "always" ],
 
-			// Règles pour Svelte ESLint
 			"svelte/no-at-html-tags": "off",
 
-			// Règles pour TypeScript ESLint
 			"@typescript-eslint/no-empty-function": "off"
 		}
 	}

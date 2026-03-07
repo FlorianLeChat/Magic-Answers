@@ -1,9 +1,7 @@
 <script>
-	// Importation des dépendances et composants.
 	import { Github } from "@lucide/svelte";
 </script>
 
-<!-- En tête avec lien le dépôt GitHub -->
 <header>
 	<a
 		rel="noopener noreferrer"
@@ -16,7 +14,6 @@
 	</a>
 </header>
 
-<!-- Pied de page avec les crédits -->
 <footer>
 	Made with 💗
 	<br />
