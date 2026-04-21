@@ -5,13 +5,9 @@
     import MagicInput from "./components/MagicInput.svelte";
     import MagicSparkles from "./components/MagicSparkles.svelte";
     import ThemeToggle from "./components/ThemeToggle.svelte";
+    import type { Theme } from "./types/theme";
+    import { MAGIC_ANSWERS, EASTER_EGG_KEYWORDS, REVEAL_VARIANTS, type RevealVariant } from "./data/magic-answers";
 
-    import { MAGIC_ANSWERS,
-        EASTER_EGG_KEYWORDS,
-        REVEAL_VARIANTS,
-        type RevealVariant } from "./data/magic-answers";
-
-    type Theme = "light" | "dark";
     type Status = "idle" | "generating" | "revealed";
 
     let theme = $state<Theme>( "light" );
@@ -64,15 +60,10 @@
     }
 </script>
 
-<div
-    class={`page ${
-        theme === "light"
-            ? "light-bg text-zinc-900"
-            : "dark-bg text-white"
-    }`}
->
+<div class={`page ${ theme === "light" ? "light-bg text-zinc-900" : "dark-bg text-white" }`}>
     <header class="flex justify-items-start gap-3">
         <a
+            class={`github ${ theme }`}
             rel="noopener noreferrer"
             href="https://github.com/FlorianLeChat/Magic-Answers"
             title="GitHub"
@@ -219,5 +210,44 @@
     .input-wrapper {
         position: relative;
         margin-top: 2rem;
+    }
+
+    .github {
+        width: 2.5rem;
+        height: 2.5rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 999px;
+
+        transition:
+            background 0.2s ease,
+            color 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .github.light {
+        background: #fbfbfd;
+        border: 1px solid #e5e7eb;
+        color: #666666;
+    }
+
+    .github.light:hover {
+        color: #333333;
+        box-shadow:
+            0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    }
+
+    .github.dark {
+        background: #4D3076;
+        color: white;
+        border: none;
+    }
+
+    .github.dark:hover {
+        background: #5a3a87;
     }
 </style>

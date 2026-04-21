@@ -1,15 +1,23 @@
 <script lang="ts">
-    import { Sparkles } from "@lucide/svelte";
-
-    type Theme = "light" | "dark";
+    import type { Theme } from "../types/theme";
 
     let { theme = "light" as Theme } = $props();
+
+    const logo = $derived( theme === "light" ? "/assets/logo/light.png" : "/assets/logo/dark.png" );
 </script>
 
-<div
-    class={`grid size-14 place-items-center rounded-2xl shadow-md ${
-        theme === "light" ? "bg-rose-300/90" : "bg-rose-300/95"
-    }`}
->
-    <Sparkles class={`size-7 ${ theme === "light" ? "text-violet-800" : "text-violet-900" }`} />
-</div>
+<img
+    src={logo}
+    alt="Logo Magic Answers"
+    draggable="false"
+/>
+
+<style>
+    img {
+        width: 56px;
+        height: 56px;
+        object-fit: contain;
+        border-radius: 20px;
+        display: block;
+    }
+</style>

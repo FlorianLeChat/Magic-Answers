@@ -1,7 +1,6 @@
 <script lang="ts">
     import type { RevealVariant } from "../data/magic-answers";
-
-    type Theme = "light" | "dark";
+    import type { Theme } from "../types/theme";
 
     let {
         answer,

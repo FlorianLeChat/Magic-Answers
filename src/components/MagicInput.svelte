@@ -1,7 +1,6 @@
 <script lang="ts">
     import { Dices } from "@lucide/svelte";
-
-    type Theme = "light" | "dark";
+    import type { Theme } from "../types/theme";
 
     let {
         value = $bindable( "" ),

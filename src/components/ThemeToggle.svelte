@@ -1,7 +1,6 @@
 <script lang="ts">
     import { Moon, Sun } from "@lucide/svelte";
-
-    type Theme = "light" | "dark";
+    import type { Theme } from "../types/theme";
 
     let {
         theme = "light" as Theme,
