@@ -1,5 +1,5 @@
 export const MAGIC_ANSWERS = [
-    "C’est certain",
+    "C'est certain",
     "Oui, clairement",
     "Probablement",
     "Les signes disent oui",
@@ -14,7 +14,7 @@ export const MAGIC_ANSWERS = [
     "Pourquoi pas",
     "Ça sent mauvais",
     "Le cosmos approuve",
-    "Pas aujourd’hui"
+    "Pas aujourd'hui"
 ];
 
 export const EASTER_EGG_KEYWORDS = [ "amour", "coeur", "cœur", "flamme", "crush", "saint valentin", "soulmate" ];
