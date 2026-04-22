@@ -1,12 +1,6 @@
 @import "tailwindcss";
 
 body {
-    background: linear-gradient(
-        90deg,
-        #F7F5FF 0%,
-        #F9E4F6 50%,
-        #F6F6FC 100%
-    );
     font-family: "Luciole", sans-serif;
 }
 

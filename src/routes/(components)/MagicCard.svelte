@@ -20,7 +20,7 @@
 </script>
 
 {#if visible}
-    <div class="relative mt-8 flex min-h-57.5 items-start justify-center">
+    <div class="relative mt-8 flex min-w-90 min-h-60 items-start justify-center">
         <div
             class={`card-shell ${ visible ? "show" : "" } ${ variant } ${ easterEgg ? "heart-mode" : "" } ${
                 theme === "light" ? "light" : "dark"

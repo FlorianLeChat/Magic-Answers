@@ -16,8 +16,12 @@
     <div class="pointer-events-none absolute inset-0 overflow-visible">
         {#each particles as particle ( particle.id )}
             <span
-                class={`sparkle ${ theme === "light" ? "bg-fuchsia-400/80" : "bg-violet-300/90" }`}
-                style={`left:${ particle.left }%;top:${ particle.top }%;width:${ particle.size }px;height:${ particle.size }px;animation-delay:${ particle.delay }s;`}
+                class={`sparkle absolute rounded-full motion-safe:animate-sparkle ${ theme === "light" ? "bg-fuchsia-400/80" : "bg-violet-300/90" }`}
+                style={`left:${ particle.left }%;
+                   top:${ particle.top }%;
+                   width:${ particle.size }px;
+                   height:${ particle.size }px;
+                   animation-delay:${ particle.delay }s;`}
             ></span>
         {/each}
     </div>
@@ -25,15 +29,15 @@
 
 <style>
     .sparkle {
-        position: absolute;
-        border-radius: 9999px;
         filter: blur(0.4px);
-        animation:
-            sparkle-pop 1.4s ease-in-out infinite,
-            sparkle-drift 1.4s ease-in-out infinite;
-        box-shadow:
-            0 0 12px currentColor,
-            0 0 24px currentColor;
+        box-shadow: 0 0 12px currentColor, 0 0 24px currentColor;
+        animation: sparkle-pop 1.4s ease-in-out infinite, sparkle-drift 1.4s ease-in-out infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .sparkle {
+            animation: none;
+        }
     }
 
     @keyframes sparkle-pop {
