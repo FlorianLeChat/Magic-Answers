@@ -1,6 +1,6 @@
 <script lang="ts">
-    import type { RevealVariant } from "../data/magic-answers";
-    import type { Theme } from "../types/theme";
+    import type { RevealVariant } from "$lib/data/magic-answers";
+    import type { Theme } from "$lib/types/theme";
 
     let {
         answer,
@@ -148,13 +148,13 @@
     }
 
     .heart-blur::before {
-        content: '';
+        content: "";
         width: 115px;
         height: 115px;
         background: radial-gradient(circle, rgba(244, 114, 182, 0.95), rgba(236, 72, 153, 0.58) 45%, transparent 72%);
         filter: blur(18px);
         clip-path: path(
-            'M 50 90 C 20 72, 0 50, 0 28 C 0 7, 17 0, 30 0 C 42 0, 50 10, 50 10 C 50 10, 58 0, 70 0 C 83 0, 100 7, 100 28 C 100 50, 80 72, 50 90 Z'
+            "M 50 90 C 20 72, 0 50, 0 28 C 0 7, 17 0, 30 0 C 42 0, 50 10, 50 10 C 50 10, 58 0, 70 0 C 83 0, 100 7, 100 28 C 100 50, 80 72, 50 90 Z"
         );
         transform: scale(1.45);
         opacity: 0.95;

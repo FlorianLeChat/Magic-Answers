@@ -1,12 +1,15 @@
 <script lang="ts">
     import { Dices } from "@lucide/svelte";
-    import type { Theme } from "../types/theme";
+    import type { Theme } from "$lib/types/theme";
 
     let {
         value = $bindable( "" ),
         theme = "light" as Theme,
         disabled = false,
-        onSubmit = () => { /* empty */ }
+        onSubmit = () =>
+        {
+            /* empty */
+        }
     } = $props();
 
     function handleSubmit()
@@ -43,8 +46,8 @@
 
     <button
         type="button"
+        {disabled}
         onclick={handleSubmit}
-        disabled={disabled}
         aria-label="Lancer la magie"
         class={`absolute right-3 top-1/2 grid size-8 -translate-y-1/2 place-items-center rounded-xl transition ${
             theme === "light"

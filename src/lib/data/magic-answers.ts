@@ -21,4 +21,4 @@ export const EASTER_EGG_KEYWORDS = [ "amour", "coeur", "cœur", "flamme", "crush
 
 export const REVEAL_VARIANTS = [ "mosaic", "flip", "fade" ] as const;
 
-export type RevealVariant = ( typeof REVEAL_VARIANTS )[number];
+export type RevealVariant = ( typeof REVEAL_VARIANTS )[ number ];

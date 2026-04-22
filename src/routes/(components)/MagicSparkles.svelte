@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { Theme } from "../types/theme";
+    import type { Theme } from "$lib/types/theme";
 
     let { active = false, theme = "light" as Theme } = $props();
 

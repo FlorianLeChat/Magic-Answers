@@ -18,9 +18,7 @@
         aria-label="Basculer le thème"
         aria-pressed={theme === "dark"}
         class={`relative flex h-8 w-16 items-center rounded-full px-1 transition ${
-            theme === "light"
-                ? "bg-white/70 ring-1 ring-black/8"
-                : "bg-slate-700/70 ring-1 ring-white/10"
+            theme === "light" ? "bg-white/70 ring-1 ring-black/8" : "bg-slate-700/70 ring-1 ring-white/10"
         }`}
     >
         <div class="pointer-events-none absolute inset-0 overflow-hidden rounded-full">

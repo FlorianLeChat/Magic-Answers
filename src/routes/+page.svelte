@@ -1,12 +1,13 @@
 <script lang="ts">
-    import { Github } from "@lucide/svelte";
-    import MagicBadge from "./components/MagicBadge.svelte";
-    import MagicCard from "./components/MagicCard.svelte";
-    import MagicInput from "./components/MagicInput.svelte";
-    import MagicSparkles from "./components/MagicSparkles.svelte";
-    import ThemeToggle from "./components/ThemeToggle.svelte";
-    import type { Theme } from "./types/theme";
-    import { MAGIC_ANSWERS, EASTER_EGG_KEYWORDS, REVEAL_VARIANTS, type RevealVariant } from "./data/magic-answers";
+    import "../app.css";
+    import { Code } from "@lucide/svelte";
+    import MagicBadge from "./(components)/MagicBadge.svelte";
+    import MagicCard from "./(components)/MagicCard.svelte";
+    import MagicInput from "./(components)/MagicInput.svelte";
+    import MagicSparkles from "./(components)/MagicSparkles.svelte";
+    import ThemeToggle from "./(components)/ThemeToggle.svelte";
+    import type { Theme } from "$lib/types/theme";
+    import { MAGIC_ANSWERS, EASTER_EGG_KEYWORDS, REVEAL_VARIANTS, type RevealVariant } from "$lib/data/magic-answers";
 
     type Status = "idle" | "generating" | "revealed";
 
@@ -31,9 +32,7 @@
     function shouldTriggerEasterEgg( input: string )
     {
         const normalized = input.toLowerCase();
-        const containsKeyword = EASTER_EGG_KEYWORDS.some( ( k ) =>
-            normalized.includes( k )
-        );
+        const containsKeyword = EASTER_EGG_KEYWORDS.some( ( k ) => normalized.includes( k ) );
 
         return containsKeyword || Math.random() < 0.08;
     }
@@ -70,7 +69,7 @@
             target="_blank"
             aria-label="GitHub"
         >
-            <Github />
+            <Code />
         </a>
 
         <ThemeToggle {theme} onToggle={toggleTheme} />
@@ -81,31 +80,21 @@
 
         <h1>Magic Answer</h1>
 
-        <p class="subtitle">
-            Demandez n’importe quoi ! Magic Answer y répondra.
-        </p>
+        <p class="subtitle">Demandez n’importe quoi ! Magic Answer y répondra.</p>
 
         <div class="input-wrapper">
-            <MagicInput
-                bind:value={question}
-                {theme}
-                disabled={status === "generating"}
-                onSubmit={askMagic}
-            />
+            <MagicInput bind:value={question} {theme} disabled={status === "generating"} onSubmit={askMagic} />
 
-            <MagicSparkles
-                active={status === "generating"}
-                {theme}
-            />
+            <MagicSparkles active={status === "generating"} {theme} />
         </div>
 
         {#if status !== "idle"}
             <MagicCard
+                {theme}
+                {answer}
                 visible={status === "revealed"}
-                answer={answer}
                 variant={revealVariant}
                 easterEgg={isEasterEgg}
-                {theme}
             />
         {/if}
     </main>
@@ -117,16 +106,10 @@
         <a
             rel="noopener noreferrer"
             href="https://www.linkedin.com/in/claire-math%C3%A9-ux-ui-designer-%E2%9C%AE/"
-            target="_blank"
-        >Claire</a
+            target="_blank">Claire</a
         >
         and
-        <a
-            rel="noopener noreferrer"
-            href="https://www.linkedin.com/in/florian-trayon/"
-            target="_blank"
-        >Florian</a
-        >
+        <a rel="noopener noreferrer" href="https://www.linkedin.com/in/florian-trayon/" target="_blank">Florian</a>
     </footer>
 </div>
 
@@ -143,12 +126,7 @@
     }
 
     .dark-bg {
-        background: linear-gradient(
-            110deg,
-            #05072f 0%,
-            #1b0045 38%,
-            #5f0099 100%
-        );
+        background: linear-gradient(110deg, #05072f 0%, #1b0045 38%, #5f0099 100%);
     }
 
     header a {
@@ -164,8 +142,12 @@
 
         &:hover {
             color: #333333;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+            box-shadow:
+                0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            transition:
+                box-shadow 0.2s ease-in-out,
+                color 0.2s ease-in-out;
 
             @media (prefers-reduced-motion: reduce) {
                 transition: none;
@@ -242,7 +224,7 @@
     }
 
     .github.dark {
-        background: #4D3076;
+        background: #4d3076;
         color: white;
         border: none;
     }
