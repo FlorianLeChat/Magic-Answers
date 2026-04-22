@@ -8,13 +8,13 @@ import { defineConfig } from "eslint/config";
 
 export default defineConfig(
     {
-        ignores: [ "**/vite-env.d.ts", "dist/**" ]
+        ignores: [ "**/app.d.ts", ".svelte-kit/**", "build/**" ]
     },
     eslint.configs.recommended,
     tslint.configs.strict,
     tslint.configs.stylistic,
     stylistic.configs.recommended,
-    sveltelint.configs[ "flat/recommended" ],
+    sveltelint.configs.recommended,
     {
         plugins: {
             "@stylistic": stylistic
@@ -26,8 +26,8 @@ export default defineConfig(
             },
             parserOptions: {
                 parser: tslint.parser,
-                project: [ "./tsconfig.json" ],
                 svelteConfig,
+                projectService: true,
                 extraFileExtensions: [ ".svelte" ]
             }
         },
