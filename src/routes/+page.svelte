@@ -1,5 +1,4 @@
 <script lang="ts">
-    import "../app.css";
     import { Code } from "@lucide/svelte";
     import LogoLight from "$lib/assets/logo/light.png";
     import LogoDark from "$lib/assets/logo/dark.png";
