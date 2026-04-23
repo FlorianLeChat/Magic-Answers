@@ -1,6 +1,7 @@
 <script lang="ts">
     import { Code } from "@lucide/svelte";
 
+    import { env } from "$env/dynamic/public";
     import { asset } from "$app/paths";
     import { browser } from "$app/environment";
     import type { Theme } from "$lib/types/theme";
@@ -109,7 +110,7 @@
 
         <h1 class="mt-10 text-[2.5rem] font-semibold">Magic Answer</h1>
 
-        <p class="mt-4 text-[0.95rem] opacity-75">Demandez n’importe quoi ! Magic Answer y répondra.</p>
+        <p class="mt-4 text-[0.95rem] opacity-75">Demandez n'importe quoi ! Magic Answer y répondra.</p>
 
         <div class="relative mt-12 w-full max-w-145">
             <MagicInput bind:value={question} {theme} disabled={status === "generating"} onSubmit={askMagic} />
@@ -128,7 +129,7 @@
         {/if}
     </main>
 
-    <footer class="w-full pt-4 text-right text-[12px] leading-snug">
+    <footer class="w-full pt-4 text-right text-xs leading-snug">
         Made with 💗
         <br />
         By
@@ -147,5 +148,6 @@
         >
             Florian
         </a>
+        ({env.PUBLIC_VERSION ?? "0.0.1"})
     </footer>
 </div>
