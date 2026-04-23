@@ -8,7 +8,7 @@
     type="button"
     class="relative flex h-8 w-16 items-center overflow-hidden rounded-full px-1 border cursor-pointer motion-safe:transition"
     onclick={onToggle}
-    aria-label="Basculer le thème"
+    aria-label="Basculer le thème de couleurs"
     aria-pressed={theme === "dark"}
     class:bg-[#E9E7F2]={theme === "light"}
     class:border-[#E5E7EB]={theme === "light"}

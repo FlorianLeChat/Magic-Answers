@@ -17,7 +17,7 @@ export const MAGIC_ANSWERS = [
     "Pas aujourd'hui"
 ];
 
-export const EASTER_EGG_KEYWORDS = [ "amour", "coeur", "cœur", "flamme", "crush", "saint valentin", "soulmate" ];
+export const EASTER_EGG_KEYWORDS = [ "amour", "coeur", "cœur", "flamme", "aime", "aimer", "embrasser", "saint valentin" ];
 
 export const REVEAL_VARIANTS = [ "mosaic", "flip", "fade" ] as const;
 

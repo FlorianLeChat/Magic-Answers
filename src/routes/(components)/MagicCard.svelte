@@ -20,7 +20,7 @@
 </script>
 
 {#if visible}
-    <div class="relative mt-8 flex min-w-90 min-h-60 items-start justify-center">
+    <div class="relative mt-8 flex items-start justify-center">
         <div
             class={`card-shell ${ visible ? "show" : "" } ${ variant } ${ easterEgg ? "heart-mode" : "" } ${
                 theme === "light" ? "light" : "dark"
@@ -45,8 +45,9 @@
 
 <style>
     .card-shell {
+        width: 350px;
+        height: 250px;
         position: relative;
-        width: min(100%, 290px);
         aspect-ratio: 1.22;
         overflow: hidden;
         border-radius: 20px;
@@ -69,6 +70,7 @@
         text-align: center;
         font-size: 1.1rem;
         font-weight: 500;
+        backdrop-filter: blur(10px);
         z-index: 2;
     }
 
@@ -117,7 +119,6 @@
 
     .mosaic-overlay span {
         background: rgba(255, 255, 255, 0.22);
-        backdrop-filter: blur(10px);
         animation: mosaic-tile 0.55s ease forwards;
     }
 
@@ -149,8 +150,8 @@
 
     .heart-blur::before {
         content: "";
-        width: 115px;
-        height: 115px;
+        width: 105px;
+        height: 90px;
         background: radial-gradient(circle, rgba(244, 114, 182, 0.95), rgba(236, 72, 153, 0.58) 45%, transparent 72%);
         filter: blur(18px);
         clip-path: path(
@@ -216,17 +217,6 @@
         100% {
             filter: blur(0);
             opacity: 1;
-        }
-    }
-
-    @media (max-width: 640px) {
-        .card-shell {
-            width: min(100%, 260px);
-        }
-
-        .card-face {
-            padding: 1.5rem;
-            font-size: 1rem;
         }
     }
 </style>
