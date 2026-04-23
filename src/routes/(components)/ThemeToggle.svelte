@@ -1,8 +1,7 @@
 <script lang="ts">
     import { Moon, Sun } from "@lucide/svelte";
-    import type { Theme } from "$lib/types/theme";
 
-    let { theme = "light" as Theme, onToggle } = $props();
+    let { theme, onToggle } = $props();
 </script>
 
 <button
@@ -36,7 +35,6 @@
         <div class="absolute left-10 top-2.5 size-0.5 rounded-full bg-white/60"></div>
     </div>
 
-    <!-- Thumb -->
     <div
         class="flex size-6 items-center justify-center rounded-full shadow-sm motion-safe:transition-transform duration-300"
         class:translate-x-0={theme === "light"}

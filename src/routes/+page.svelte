@@ -1,14 +1,15 @@
 <script lang="ts">
     import { Code } from "@lucide/svelte";
-    import LogoLight from "$lib/assets/logo/light.png";
-    import LogoDark from "$lib/assets/logo/dark.png";
+
+    import { asset } from "$app/paths";
+    import { browser } from "$app/environment";
     import type { Theme } from "$lib/types/theme";
+    import { EASTER_EGG_KEYWORDS, MAGIC_ANSWERS, REVEAL_VARIANTS, type RevealVariant } from "$lib/data/magic-answers";
+
     import MagicCard from "./(components)/MagicCard.svelte";
     import MagicInput from "./(components)/MagicInput.svelte";
-    import MagicSparkles from "./(components)/MagicSparkles.svelte";
     import ThemeToggle from "./(components)/ThemeToggle.svelte";
-
-    import { MAGIC_ANSWERS, EASTER_EGG_KEYWORDS, REVEAL_VARIANTS, type RevealVariant } from "$lib/data/magic-answers";
+    import MagicSparkles from "./(components)/MagicSparkles.svelte";
 
     type Status = "idle" | "generating" | "revealed";
 
@@ -18,6 +19,13 @@
     let status = $state<Status>( "idle" );
     let revealVariant = $state<RevealVariant>( "fade" );
     let isEasterEgg = $state( false );
+    let favicon = $derived( asset( `/assets/favicons/${ theme }.png` ) );
+
+    if ( browser )
+    {
+        const media = window.matchMedia( "(prefers-color-scheme: dark)" );
+        theme = media.matches ? "dark" : "light";
+    }
 
     const randomItem = <T>( items: readonly T[] ): T =>
     {
@@ -83,12 +91,21 @@
     </header>
 
     <main class="flex flex-1 flex-col items-center justify-center text-center">
-        <img
-            src={theme === "light" ? LogoLight : LogoDark}
-            alt="Logo Magic Answer"
-            class="w-21 h-21 object-contain rounded-[20px] block"
-            draggable="false"
-        />
+        {#if browser}
+            <img
+                src={favicon}
+                alt="Logo Magic Answer"
+                class="w-21 h-21 object-contain rounded-2xl block"
+                draggable="false"
+            />
+        {:else}
+            <img
+                src={asset( `/assets/favicons/${ theme }.png` )}
+                alt="Logo Magic Answer"
+                class="w-21 h-21 object-contain rounded-2xl block"
+                draggable="false"
+            />
+        {/if}
 
         <h1 class="mt-10 text-[2.5rem] font-semibold">Magic Answer</h1>
 
