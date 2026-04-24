@@ -81,7 +81,7 @@
             rel="noopener noreferrer"
             href="https://github.com/FlorianLeChat/Magic-Answers"
             target="_blank"
-            aria-label="GitHub repository link"
+            aria-label="Lien vers le dépôt GitHub"
         >
             <Code />
         </a>
@@ -108,7 +108,7 @@
 
         <h1 class="mt-10 text-[2.5rem] font-semibold">Magic Answers</h1>
 
-        <p class="mt-4 text-[0.95rem] opacity-75">Ask anything! Magic Answers will answer it.</p>
+        <p class="mt-4 text-[0.95rem] opacity-75">Demandez n'importe quoi ! Magic Answers y répondra.</p>
 
         <fieldset class="relative mt-12 w-full max-w-145">
             <MagicInput bind:value={question} {theme} disabled={status === "generating"} onSubmit={askMagic} />

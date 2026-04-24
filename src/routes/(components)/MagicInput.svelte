@@ -40,7 +40,7 @@
             ? "border-white/70 bg-white/80 text-zinc-800 shadow-[0_12px_40px_rgba(150,120,170,0.18)] placeholder:text-zinc-500"
             : "border-violet-300/35 bg-violet-950/25 text-white shadow-[0_0_28px_rgba(139,92,246,0.32)] placeholder:text-white/70"
     } ${ disabled ? "cursor-not-allowed opacity-80" : "" }`}
-    placeholder="Ask a question"
+    placeholder="Poser une question"
     onkeydown={handleKeydown}
 />
 
@@ -53,7 +53,7 @@
             ? "bg-fuchsia-200 text-zinc-700 hover:bg-fuchsia-300"
             : "bg-zinc-900 text-white hover:bg-zinc-800"
     } ${ disabled ? "cursor-not-allowed opacity-60" : "" }`}
-    aria-label="Cast a spell"
+    aria-label="Lancer la magie"
 >
     <Dices class="size-4.5" />
 </button>

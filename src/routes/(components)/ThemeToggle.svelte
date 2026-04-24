@@ -10,7 +10,7 @@
     motion-safe:transition-colors motion-safe:duration-200
     motion-reduce:transition-none"
     onclick={onToggle}
-    aria-label="Switch color scheme"
+    aria-label="Basculer le thème de couleurs"
     aria-pressed={theme === "dark"}
     class:bg-[#E9E7F2]={theme === "light"}
     class:border-[#E5E7EB]={theme === "light"}

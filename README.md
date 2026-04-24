@@ -11,6 +11,9 @@
 ![Prettier](.gitlab/badges/prettier.svg)
 ![ESLint](.gitlab/badges/eslint.svg)
 
+> [!IMPORTANT]
+> 🥖 Unlike my other projects, this one is entirely in French and is intended only for French-speaking readers.
+
 ## In French
 
 > [!IMPORTANT]
