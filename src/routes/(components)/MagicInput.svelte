@@ -34,7 +34,8 @@
     {disabled}
     bind:value
     type="text"
-    class={`h-14 w-full rounded-2xl border pl-5 pr-16 text-sm outline-none motion-safe:transition ${
+    name="search"
+    class={`h-14 w-full rounded-2xl border pl-5 pr-16 text-sm outline-none focus-visible:ring-2 focus-visible:ring-violet-400 motion-safe:transition ${
         theme === "light"
             ? "border-white/70 bg-white/80 text-zinc-800 shadow-[0_12px_40px_rgba(150,120,170,0.18)] placeholder:text-zinc-500"
             : "border-violet-300/35 bg-violet-950/25 text-white shadow-[0_0_28px_rgba(139,92,246,0.32)] placeholder:text-white/70"

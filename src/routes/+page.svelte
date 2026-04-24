@@ -110,11 +110,11 @@
 
         <p class="mt-4 text-[0.95rem] opacity-75">Ask anything! Magic Answer will answer it.</p>
 
-        <div class="relative mt-12 w-full max-w-145">
+        <fieldset class="relative mt-12 w-full max-w-145">
             <MagicInput bind:value={question} {theme} disabled={status === "generating"} onSubmit={askMagic} />
 
             <MagicSparkles active={status === "generating"} {theme} />
-        </div>
+        </fieldset>
 
         {#if status !== "idle"}
             <MagicCard

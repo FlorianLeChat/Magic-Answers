@@ -28,15 +28,17 @@
 {/if}
 
 <style>
+    @reference "../app.css";
+
     .sparkle {
-        filter: blur(0.4px);
-        box-shadow: 0 0 12px currentColor, 0 0 24px currentColor;
+        @apply blur-[0.4px];
         animation: sparkle-pop 1.4s ease-in-out infinite, sparkle-drift 1.4s ease-in-out infinite;
+        box-shadow: 0 0 12px currentColor, 0 0 24px currentColor;
     }
 
     @media (prefers-reduced-motion: reduce) {
         .sparkle {
-            animation: none;
+            @apply animate-none;
         }
     }
 

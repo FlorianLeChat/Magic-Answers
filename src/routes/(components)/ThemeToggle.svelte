@@ -6,7 +6,9 @@
 
 <button
     type="button"
-    class="relative flex h-8 w-16 items-center overflow-hidden rounded-full px-1 border cursor-pointer motion-safe:transition"
+    class="relative flex h-8 w-16 items-center overflow-hidden rounded-full px-1 border cursor-pointer
+    motion-safe:transition-colors motion-safe:duration-200
+    motion-reduce:transition-none"
     onclick={onToggle}
     aria-label="Switch color scheme"
     aria-pressed={theme === "dark"}
@@ -15,7 +17,7 @@
     class:motion-safe:hover:shadow-md={theme === "light"}
     class:bg-[#4D3076]={theme === "dark"}
     class:border-transparent={theme === "dark"}
-    class:hover:bg-[#5a3a87]={theme === "dark"}
+    class:motion-safe:hover:bg-[#5a3a87]={theme === "dark"}
 >
     <div
         class="pointer-events-none absolute inset-0"
@@ -36,9 +38,13 @@
     </div>
 
     <div
-        class="flex size-6 items-center justify-center rounded-full shadow-sm motion-safe:transition-transform duration-300"
-        class:translate-x-0={theme === "light"}
-        class:translate-x-8={theme === "dark"}
+        class="flex size-6 items-center justify-center rounded-full shadow-sm
+        motion-safe:transition-transform motion-safe:duration-300
+        motion-reduce:transition-none motion-reduce:shadow-none"
+        class:motion-safe:translate-x-0={theme === "light"}
+        class:motion-safe:translate-x-8={theme === "dark"}
+        class:motion-reduce:translate-x-0={theme === "light"}
+        class:motion-reduce:translate-x-8={theme === "dark"}
         class:bg-[#F59E0B]={theme === "light"}
         class:bg-[#E5E7EB]={theme === "dark"}
     >
