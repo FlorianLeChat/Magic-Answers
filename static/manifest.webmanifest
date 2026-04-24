@@ -1,6 +1,6 @@
 {
-    "name": "Magic Answer",
-    "short_name": "Magic Answer",
+    "name": "Magic Answers",
+    "short_name": "Magic Answers",
     "description": "✨ A website designed to answer every question you can imagine.",
     "display": "standalone",
     "start_url": "/",

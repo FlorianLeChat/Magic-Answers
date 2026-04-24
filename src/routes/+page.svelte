@@ -93,22 +93,22 @@
         {#if browser}
             <img
                 src={favicon}
-                alt="Magic Answer Logo"
+                alt="Magic Answers Logo"
                 class="w-21 h-21 object-contain rounded-2xl block"
                 draggable="false"
             />
         {:else}
             <img
                 src={asset( `/assets/favicons/${ theme }.png` )}
-                alt="Magic Answer Logo"
+                alt="Magic Answers Logo"
                 class="w-21 h-21 object-contain rounded-2xl block"
                 draggable="false"
             />
         {/if}
 
-        <h1 class="mt-10 text-[2.5rem] font-semibold">Magic Answer</h1>
+        <h1 class="mt-10 text-[2.5rem] font-semibold">Magic Answers</h1>
 
-        <p class="mt-4 text-[0.95rem] opacity-75">Ask anything! Magic Answer will answer it.</p>
+        <p class="mt-4 text-[0.95rem] opacity-75">Ask anything! Magic Answers will answer it.</p>
 
         <fieldset class="relative mt-12 w-full max-w-145">
             <MagicInput bind:value={question} {theme} disabled={status === "generating"} onSubmit={askMagic} />
