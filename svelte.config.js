@@ -3,6 +3,13 @@ import adapter from "@sveltejs/adapter-static";
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
     kit: {
+        typescript: {
+            config: ( config ) =>
+            {
+                config.include.push( "../*.config.*" );
+                return config;
+            }
+        },
         adapter: adapter(),
         paths: {
             // @ts-expect-error Needed for GitLab Pages generation.
