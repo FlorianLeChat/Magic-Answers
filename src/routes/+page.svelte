@@ -1,6 +1,5 @@
 <script lang="ts">
     import { Code } from "@lucide/svelte";
-
     import { env } from "$env/dynamic/public";
     import { asset } from "$app/paths";
     import { browser } from "$app/environment";
@@ -18,9 +17,9 @@
     let question = $state( "" );
     let answer = $state( "" );
     let status = $state<Status>( "idle" );
+    let favicon = $derived( asset( `/assets/favicons/${ theme }.png` ) );
     let revealVariant = $state<RevealVariant>( "fade" );
     let isEasterEgg = $state( false );
-    let favicon = $derived( asset( `/assets/favicons/${ theme }.png` ) );
 
     if ( browser )
     {
@@ -42,7 +41,7 @@
     {
         const normalized = input.toLowerCase();
 
-        return EASTER_EGG_KEYWORDS.some( ( k ) => normalized.includes( k ) ) || Math.random() < 0.08;
+        return EASTER_EGG_KEYWORDS.some( ( k ) => normalized.includes( k ) );
     };
 
     const askMagic = () =>
@@ -54,7 +53,6 @@
 
         const nextAnswer = randomItem( MAGIC_ANSWERS );
         const easter = shouldTriggerEasterEgg( question );
-
         const delay = 1400 + Math.random() * 700;
 
         setTimeout( () =>
@@ -83,7 +81,7 @@
             rel="noopener noreferrer"
             href="https://github.com/FlorianLeChat/Magic-Answers"
             target="_blank"
-            aria-label="GitHub"
+            aria-label="GitHub repository link"
         >
             <Code />
         </a>
@@ -95,14 +93,14 @@
         {#if browser}
             <img
                 src={favicon}
-                alt="Logo Magic Answer"
+                alt="Magic Answer Logo"
                 class="w-21 h-21 object-contain rounded-2xl block"
                 draggable="false"
             />
         {:else}
             <img
                 src={asset( `/assets/favicons/${ theme }.png` )}
-                alt="Logo Magic Answer"
+                alt="Magic Answer Logo"
                 class="w-21 h-21 object-contain rounded-2xl block"
                 draggable="false"
             />
@@ -110,7 +108,7 @@
 
         <h1 class="mt-10 text-[2.5rem] font-semibold">Magic Answer</h1>
 
-        <p class="mt-4 text-[0.95rem] opacity-75">Demandez n'importe quoi ! Magic Answer y répondra.</p>
+        <p class="mt-4 text-[0.95rem] opacity-75">Ask anything! Magic Answer will answer it.</p>
 
         <div class="relative mt-12 w-full max-w-145">
             <MagicInput bind:value={question} {theme} disabled={status === "generating"} onSubmit={askMagic} />

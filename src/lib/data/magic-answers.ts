@@ -1,23 +1,23 @@
 export const MAGIC_ANSWERS = [
-    "C'est certain",
-    "Oui, clairement",
-    "Probablement",
-    "Les signes disent oui",
-    "Ne comptez pas là dessus",
-    "Très peu probable",
-    "Demandez plus tard",
-    "Le destin hésite",
-    "Impossible à dire",
-    "Absolument pas",
-    "Cela semble favorable",
-    "Le brouillard est dense",
-    "Pourquoi pas",
-    "Ça sent mauvais",
-    "Le cosmos approuve",
-    "Pas aujourd'hui"
+    "It is certain",
+    "Yes, clearly",
+    "Probably",
+    "The signs say yes",
+    "Don't count on it",
+    "Very unlikely",
+    "Ask again later",
+    "Fate is undecided",
+    "Impossible to say",
+    "Absolutely not",
+    "It seems favorable",
+    "The fog is dense",
+    "Why not",
+    "That smells bad",
+    "The cosmos approves",
+    "Not today"
 ];
 
-export const EASTER_EGG_KEYWORDS = [ "amour", "coeur", "cœur", "flamme", "aime", "aimer", "embrasser", "saint valentin" ];
+export const EASTER_EGG_KEYWORDS = [ "love", "heart", "flame", "loves", "to love", "kiss", "valentine's day" ];
 
 export const REVEAL_VARIANTS = [ "mosaic", "flip", "fade" ] as const;
 
