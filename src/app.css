@@ -4,6 +4,14 @@ body {
     font-family: "Luciole", sans-serif;
 }
 
+@layer base {
+    /* https://tailwindcss.com/docs/upgrade-guide#buttons-use-the-default-cursor */
+    button:not(:disabled),
+    [role="button"]:not(:disabled) {
+        @apply cursor-pointer;
+    }
+}
+
 @font-face {
     src: url(/assets/fonts/Luciole-Regular.ttf) format("truetype");
     font-style: normal;

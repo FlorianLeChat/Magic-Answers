@@ -6,7 +6,7 @@
 
 <button
     type="button"
-    class="relative flex h-8 w-16 items-center overflow-hidden rounded-full px-1 border cursor-pointer
+    class="relative flex h-8 w-16 items-center overflow-hidden rounded-full px-1 border
     motion-safe:transition-colors motion-safe:duration-200
     motion-reduce:transition-none"
     onclick={onToggle}

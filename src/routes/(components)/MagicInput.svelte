@@ -48,7 +48,7 @@
     {disabled}
     type="button"
     onclick={handleSubmit}
-    class={`absolute cursor-pointer right-3 top-1/2 grid size-8 -translate-y-1/2 place-items-center rounded-xl motion-safe:transition ${
+    class={`absolute right-3 top-1/2 grid size-8 -translate-y-1/2 place-items-center rounded-xl motion-safe:transition ${
         theme === "light"
             ? "bg-fuchsia-200 text-zinc-700 hover:bg-fuchsia-300"
             : "bg-zinc-900 text-white hover:bg-zinc-800"
