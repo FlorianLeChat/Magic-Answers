@@ -46,7 +46,7 @@
     },
     "scripts": {
         "dev": "vite",
-        "lint": "eslint . --fix --format gitlab --ext .js,.ts,.svelte",
+        "lint": "eslint . --format gitlab --ext .js,.ts,.svelte",
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
         "build": "vite build",
         "format": "prettier --write \"**/*.{js,ts,svelte}\"",
