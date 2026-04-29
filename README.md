@@ -89,4 +89,4 @@ Last but not least, the site contains no cookies, tracking technologies, or adve
 - Remove development dependencies using `npm prune --omit=dev` ;
 - Use a web server to serve the static files generated in the previous step.
 
-![image](static/assets/images/magic-answers.png)
+![image](static/assets/images/opengraph.png)
