@@ -17,7 +17,7 @@
 ## In French
 
 > [!IMPORTANT]
-> Le code du projet est aussi hébergé sur mon instance GitLab personnalisée, accessible à [cette adresse](https://git.florian-dev.fr/floriantrayon/Magic-Answer). Le dépôt GitHub est un miroir du dépôt GitLab, **mis à jour automatiquement**.
+> Le code du projet est aussi hébergé sur mon instance GitLab personnalisée, accessible à [cette adresse](https://git.florian-dev.fr/floriantrayon/Magic-Answers). Le dépôt GitHub est un miroir du dépôt GitLab, **mis à jour automatiquement**.
 >
 > **Les contributions publiques restent sur GitHub et sont les bienvenues** ; les pull requests validées y seront ensuite transférées manuellement sur GitLab pour être intégrées. 🙂
 
@@ -54,7 +54,7 @@ Enfin, le site Internet ne contient ni cookies, ni technologies de suivi, ni pub
 ## In English
 
 > [!IMPORTANT]
-> The project's code is also hosted on my custom GitLab instance, available at [this address](https://git.florian-dev.fr/floriantrayon/Magic-Answer). The GitHub repository is a mirror of the GitLab repository, **automatically kept up to date**.
+> The project's code is also hosted on my custom GitLab instance, available at [this address](https://git.florian-dev.fr/floriantrayon/Magic-Answers). The GitHub repository is a mirror of the GitLab repository, **automatically kept up to date**.
 >
 > **Public contributions remain on GitHub and are welcome**; validated pull requests will then be manually transferred to GitLab to be integrated. 🙂
 
