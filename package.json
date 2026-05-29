@@ -52,8 +52,8 @@
         "format": "prettier --write \"**/*.{js,ts,svelte}\"",
         "preview": "vite preview",
         "prepare": "husky && svelte-kit sync || echo ''",
-        "lint-staged": "lint-staged",
-        "commitlint": "commitlint --edit"
+        "commitlint": "commitlint --edit",
+        "lint-staged": "lint-staged"
     },
     "browserslist": [
         "defaults"
