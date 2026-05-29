@@ -1,16 +1,13 @@
 <script lang="ts">
-    import type { Theme } from "$lib/types/theme";
     import type { RevealVariant } from "$lib/data/magic-answers";
 
     let {
         answer,
-        theme,
         variant,
         easterEgg,
         visible
     }: {
         answer: string;
-        theme?: Theme;
         variant?: RevealVariant;
         easterEgg?: boolean;
         visible?: boolean;
@@ -29,22 +26,17 @@
             class:translate-y-0={visible}
             class:fade={variant === "fade"}
             class:flip={variant === "flip"}
-            class:light={theme === "light"}
-            class:dark={theme !== "light"}
             class:mosaic={variant === "mosaic"}
             class:heart-mode={easterEgg}
         >
             {#if easterEgg}
                 <div class="heart-blur absolute inset-0 z-1 grid place-items-center"></div>
             {:else if variant === "mosaic"}
-                <div
-                    class="mosaic-overlay absolute inset-0 z-3 grid grid-cols-6 grid-rows-4"
-                    aria-hidden="true"
-                >
+                <div class="mosaic-overlay absolute inset-0 z-3 grid grid-cols-6 grid-rows-4" aria-hidden="true">
                     {#each tiles as tile ( tile )}
                         <span
                             class="bg-white/20 backdrop-blur-md"
-                            style={`animation-delay: ${ ( tile % 6 + Math.floor( tile / 6 ) ) * 0.03 }s`}
+                            style={`animation-delay: ${ ( ( tile % 6 ) + Math.floor( tile / 6 ) ) * 0.03 }s`}
                         ></span>
                     {/each}
                 </div>
@@ -64,7 +56,7 @@
 <style>
     @reference "../app.css";
 
-    .light {
+    .card-shell {
         @apply text-zinc-800;
         background:
             linear-gradient(180deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.1)),
@@ -75,7 +67,7 @@
         box-shadow: 0 22px 50px rgba(153, 118, 144, 0.18);
     }
 
-    .dark {
+    :global(html.dark) .card-shell {
         @apply text-white;
         background:
             radial-gradient(circle at 18% 100%, rgba(37, 99, 235, 0.95), transparent 26%),
@@ -116,13 +108,13 @@
         }
     }
 
-    .heart-mode.light {
+    .heart-mode {
         background:
             linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02)),
             linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75));
     }
 
-    .heart-mode.dark {
+    :global(html.dark) .heart-mode {
         background:
             linear-gradient(180deg, rgba(9, 3, 28, 0.98), rgba(15, 6, 34, 0.96)),
             linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
@@ -137,8 +129,7 @@
         );
     }
 
-    .dark .heart-blur::before {
-        @apply blur-lg;
+    :global(html.dark) .heart-blur::before {
         background: radial-gradient(circle, rgba(192, 132, 252, 0.96), rgba(168, 85, 247, 0.62) 45%, transparent 72%);
     }
 

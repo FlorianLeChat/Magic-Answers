@@ -7,7 +7,7 @@
         <meta name="theme-color" content="#DEAAE6" />
         <meta name="text-scale" content="scale" />
         <meta name="description" content="✨ A website designed to answer every question you can imagine." />
-        <meta name="keywords" content="npm,typescript,eslint,a11y,prettier,svelte,husky,tailwindcss,vite,svelte-kit,magic-answer" />
+        <meta name="keywords" content="npm,typescript,eslint,a11y,prettier,svelte,husky,tailwindcss,vite,sveltekit,magic-answer" />
 
         <title>Magic Answers</title>
 
@@ -28,6 +28,27 @@
         <meta name="twitter:title" content="Magic Answers" />
         <meta name="twitter:description" content="✨ A website designed to answer every question you can imagine." />
         <meta name="twitter:image" content="assets/images/opengraph.png" />
+
+        <script>
+            (function () {
+                const key = "COLOR_SCHEME";
+                const stored = localStorage.getItem(key);
+                const element = document.documentElement;
+
+                element.classList.remove("light", "dark");
+
+                if (stored === "light" || stored === "dark") {
+                    element.classList.add(stored);
+                } else {
+                    const isDark = matchMedia("(prefers-color-scheme: dark)").matches;
+                    const target = isDark ? "dark" : "light";
+
+                    element.classList.add(target);
+
+                    localStorage.setItem(key, target);
+                }
+            })();
+        </script>
 
         %sveltekit.head%
     </head>

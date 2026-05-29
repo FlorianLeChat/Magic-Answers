@@ -1,7 +1,5 @@
 <script lang="ts">
-    import type { Theme } from "$lib/types/theme";
-
-    let { active = false, theme = "light" as Theme } = $props();
+    let { active = false } = $props();
 
     const particles = Array.from( { length: 16 }, ( _, i ) => ( {
         id: i,
@@ -16,7 +14,7 @@
     <div class="pointer-events-none absolute inset-0 overflow-visible">
         {#each particles as particle ( particle.id )}
             <span
-                class={`sparkle absolute rounded-full motion-safe:animate-sparkle ${ theme === "light" ? "bg-fuchsia-400/80" : "bg-violet-300/90" }`}
+                class="sparkle absolute rounded-full motion-safe:animate-sparkle bg-fuchsia-400/80 dark:bg-violet-300/90"
                 style={`left:${ particle.left }%;
                    top:${ particle.top }%;
                    width:${ particle.size }px;
