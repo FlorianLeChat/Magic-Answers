@@ -43,8 +43,7 @@
             {/if}
 
             <div
-                class="relative z-2 grid h-full w-full place-items-center
-                   p-8 text-center text-lg font-medium backdrop-blur-md"
+                class="relative z-2 grid h-full w-full place-items-center p-8 text-center text-lg font-medium backdrop-blur-sm"
                 class:spoiler-text={variant === "flip" && !easterEgg}
             >
                 <p class="relative z-2">{answer}</p>
