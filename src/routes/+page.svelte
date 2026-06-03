@@ -5,7 +5,7 @@
     import { asset } from "$app/paths";
     import type { Theme } from "$lib/types/Theme";
     import { themeStore } from "$lib/theme.svelte";
-    import { EASTER_EGG_KEYWORDS, MAGIC_ANSWERS, REVEAL_VARIANTS, type RevealVariant } from "$lib/data/magic-answers";
+    import { EASTER_EGG_KEYWORDS, LOVE_ANSWERS, MAGIC_ANSWERS, REVEAL_VARIANTS, type RevealVariant } from "$lib/data/magic-answers";
 
     import MagicCard from "./(components)/MagicCard.svelte";
     import MagicInput from "./(components)/MagicInput.svelte";
@@ -14,7 +14,7 @@
 
     type Status = "idle" | "generating" | "revealed";
 
-    let theme = $state<Theme>( themeStore.value );
+    let theme = $derived<Theme>( themeStore.value );
     let question = $state( "" );
     let answer = $state( "" );
     let status = $state<Status>( "idle" );
@@ -31,9 +31,18 @@
         themeStore.apply( theme === "light" ? "dark" : "light" );
     };
 
+    const normalizeText = ( text: string ): string =>
+        text
+            .toLowerCase()
+            .replace( /['']/g, "'" )
+            .replace( /œ/g, "oe" )
+            .replace( /æ/g, "ae" )
+            .normalize( "NFD" )
+            .replace( /[̀-ͯ]/g, "" );
+
     const shouldTriggerEasterEgg = ( input: string ) =>
     {
-        const normalized = input.toLowerCase();
+        const normalized = normalizeText( input );
 
         return EASTER_EGG_KEYWORDS.some( ( k ) => normalized.includes( k ) );
     };
@@ -45,8 +54,8 @@
         status = "generating";
         revealVariant = randomItem( REVEAL_VARIANTS );
 
-        const nextAnswer = randomItem( MAGIC_ANSWERS );
         const easter = shouldTriggerEasterEgg( question );
+        const nextAnswer = randomItem( easter ? LOVE_ANSWERS : MAGIC_ANSWERS );
         const delay = 1400 + Math.random() * 700;
 
         setTimeout( () =>
@@ -110,7 +119,7 @@
 
         <h1 class="mt-10 text-[2.5rem] font-semibold">Magic Answers</h1>
 
-        <p class="mt-4 text-[0.95rem] opacity-75">Demandez n'importe quoi ! Magic Answers y répondra.</p>
+        <p class="mt-4 text-[0.95rem] opacity-75">Demandez n'importe quoi sur votre avenir ! Magic Answers y répondra.</p>
 
         <fieldset class="relative mt-12 w-full max-w-145">
             <MagicInput bind:value={question} disabled={status === "generating"} onSubmit={askMagic} />
