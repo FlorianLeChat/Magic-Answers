@@ -4,8 +4,8 @@
     "start_url": "/",
     "short_name": "Magic Answers",
     "description": "✨ A website designed to answer every question you can imagine.",
-    "theme_color": "#deaae6",
-    "background_color": "#f9e4f6",
+    "theme_color": "#4d3076",
+    "background_color": "#e9e7f2",
     "icons": [
         {
             "src": "assets/favicons/light.png",
