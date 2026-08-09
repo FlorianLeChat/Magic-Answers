@@ -31,24 +31,22 @@
         <meta name="twitter:image" content="assets/images/opengraph.png" />
 
         <script>
-            (function () {
-                const key = "COLOR_SCHEME";
-                const stored = localStorage.getItem(key);
-                const element = document.documentElement;
+            const key = "magic-answers:theme";
+            const stored = localStorage.getItem(key);
+            const element = document.documentElement;
 
-                element.classList.remove("light", "dark");
+            element.classList.remove("light", "dark");
 
-                if (stored === "light" || stored === "dark") {
-                    element.classList.add(stored);
-                } else {
-                    const isDark = matchMedia("(prefers-color-scheme: dark)").matches;
-                    const target = isDark ? "dark" : "light";
+            if (stored === "light" || stored === "dark") {
+                element.classList.add(stored);
+            } else {
+                const isDark = matchMedia("(prefers-color-scheme: dark)").matches;
+                const target = isDark ? "dark" : "light";
 
-                    element.classList.add(target);
+                element.classList.add(target);
 
-                    localStorage.setItem(key, target);
-                }
-            })();
+                localStorage.setItem(key, target);
+            }
         </script>
 
         %sveltekit.head%
