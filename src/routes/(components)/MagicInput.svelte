@@ -38,7 +38,7 @@
        border-white/70 bg-white/80 text-zinc-800 shadow-[0_12px_40px_rgba(150,120,170,0.18)] placeholder:text-zinc-500
        dark:border-violet-300/35 dark:bg-violet-950/25 dark:text-white dark:shadow-[0_0_28px_rgba(139,92,246,0.32)] dark:placeholder:text-white/70
     ${ disabled ? "cursor-not-allowed opacity-80" : "" }`}
-    placeholder={m.questionInputPlaceholder()}
+    placeholder={m.form_question_input_placeholder()}
     onkeydown={handleKeydown}
 />
 
@@ -50,7 +50,7 @@
         bg-fuchsia-200 text-zinc-700 hover:bg-fuchsia-300
         dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800
     ${ disabled ? "cursor-not-allowed opacity-60" : "" }`}
-    aria-label={m.submitButtonAriaLabel()}
+    aria-label={m.form_submit_button_aria_label()}
 >
     <Dices class="size-4.5" />
 </button>

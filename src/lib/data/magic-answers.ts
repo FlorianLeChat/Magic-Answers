@@ -5,7 +5,7 @@ type MessageFunction = ( typeof m )[ MessageKey ];
 
 /**
  * Collects every generated Paraglide message starting with the given prefix
- * (e.g. "magicAnswer"), sorted by key so the numbering order is preserved.
+ * (e.g. "magic_answer"), sorted by key so the numbering order is preserved.
  *
  * @author Claude
  */
@@ -15,8 +15,8 @@ const messagesByPrefix = ( prefix: string ): MessageFunction[] =>
         .sort()
         .map( ( key ) => m[ key ] );
 
-export const MAGIC_ANSWERS = messagesByPrefix( "magicAnswer" );
-export const LOVE_ANSWERS = messagesByPrefix( "loveAnswer" );
+export const MAGIC_ANSWERS = messagesByPrefix( "magic_answer" );
+export const LOVE_ANSWERS = messagesByPrefix( "love_answer" );
 
 /**
  * Kept as raw keywords (not Paraglide messages): this list is used to detect

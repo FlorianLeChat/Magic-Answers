@@ -97,7 +97,7 @@
             rel="noopener noreferrer"
             href="https://github.com/FlorianLeChat/Magic-Answers"
             target="_blank"
-            aria-label={m.githubLinkAriaLabel()}
+            aria-label={m.header_github_link_aria_label()}
         >
             <Code />
         </a>
@@ -108,19 +108,19 @@
     <main class="flex flex-1 flex-col items-center justify-center text-center">
         <img
             src={asset( "/assets/favicons/light.png" )}
-            alt={m.logoLightAlt()}
+            alt={m.header_logo_light_alt()}
             class="dark:hidden w-21 h-21 object-contain rounded-2xl"
         />
 
         <img
             src={asset( "/assets/favicons/dark.png" )}
-            alt={m.logoDarkAlt()}
+            alt={m.header_logo_dark_alt()}
             class="hidden dark:block w-21 h-21 object-contain rounded-2xl"
         />
 
         <h1 class="mt-10 text-[2.5rem] font-semibold">Magic Answers</h1>
 
-        <p class="mt-4 text-[0.95rem] opacity-75">{m.heroSubtitle()}</p>
+        <p class="mt-4 text-[0.95rem] opacity-75">{m.hero_subtitle()}</p>
 
         <fieldset class="relative mt-12 w-full max-w-145">
             <MagicInput bind:value={question} disabled={status === "generating"} onSubmit={askMagic} />

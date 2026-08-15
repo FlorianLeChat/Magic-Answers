@@ -13,7 +13,7 @@
         bg-[#E9E7F2] border-[#E5E7EB] motion-safe:hover:shadow-md
         dark:bg-[#4D3076] dark:border-transparent dark:motion-safe:hover:shadow-none dark:motion-safe:hover:bg-[#5a3a87]"
     onclick={onToggle}
-    aria-label={m.themeToggleAriaLabel()}
+    aria-label={m.theme_toggle_aria_label()}
     aria-pressed={theme === "dark"}
 >
     <div class="pointer-events-none absolute inset-0 dark:hidden">
