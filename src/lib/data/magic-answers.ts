@@ -1,69 +1,30 @@
-export const MAGIC_ANSWERS = [
-    "C'est compliqué à dire",
-    "Le destin n'est pas encore décidé",
-    "Repose la question plus tard",
-    "Tout dépend de ce qui va suivre",
-    "La réponse se cache dans le silence",
-    "Le temps le dira",
-    "Le moment n'est pas encore venu",
-    "Le résultat est incertain",
-    "La réponse est en train de se dessiner",
-    "La patience révèle beaucoup",
-    "Trop de variables entrent en jeu",
-    "Regarde de plus près et repose la question",
-    "L'équilibre est fragile",
-    "Les possibilités restent ouvertes",
-    "Ce n'est pas encore décidé",
-    "Quelque chose doit d'abord changer",
-    "Les dés ne sont pas encore jetés",
-    "Il est trop tôt pour trancher",
-    "Laisse le temps faire son œuvre",
-    "Rien n'est gravé dans le marbre",
-    "Il est trop tôt pour trouver les réponses",
-    "Les forces de l'univers délibèrent encore",
-    "Un signe t'attend, ouvre les yeux",
-    "Oui, bien sûr",
-    "Et pourquoi pas ?",
-    "Les astres s'alignent en ta faveur",
-    "Les étoiles disent oui",
-    "Absolument, fonce !",
-    "Tout indique que oui",
-    "La lune plaide en ta faveur ce soir",
-    "Non, pas vraiment",
-    "Les signes pointent vers non",
-    "Ce chemin ne mène nulle part",
-    "Mieux vaut y renoncer pour l'instant",
-    "Fais attention à ton ennemi",
-    "La magie préfère garder le silence sur ce sujet",
-    "Même les étoiles haussent les épaules",
-    "Les cristaux sont confus",
-    "Demande à ton chat, il sait",
-    "La boule de cristal rit doucement",
-    "Concentre-toi mieux avant de reposer la question",
-    "Une ombre plane sur cette question",
-    "L'univers a entendu ta question... et choisit le mystère",
-    "Les planètes ne sont pas alignées pour répondre",
-    "L'univers complote dans ton dos"
-];
+import * as m from "$lib/locales/messages.js";
 
-export const LOVE_ANSWERS = [
-    "L'amour trouve toujours un chemin",
-    "Le cœur sait ce que la raison ignore",
-    "Cette flamme ne s'éteint pas facilement",
-    "Quelqu'un pense à toi en ce moment",
-    "Les battements de cœur ne mentent jamais",
-    "Un coup de foudre ne prévient pas",
-    "L'amour mérite d'être tenté",
-    "Ce sentiment est réel, fais-lui confiance",
-    "Laisse ton cœur parler plus fort que ta tête",
-    "Le destin a déjà planifié cette rencontre",
-    "Certaines âmes sont faites pour se retrouver",
-    "Ose dire ce que tu ressens",
-    "L'amour est patient, mais il n'attend pas indéfiniment",
-    "Les étoiles sourient à votre histoire",
-    "Tout amour commence par une simple question"
-];
+type MessageKey = Exclude<keyof typeof m, "m">;
+type MessageFunction = ( typeof m )[ MessageKey ];
 
+/**
+ * Collects every generated Paraglide message starting with the given prefix
+ * (e.g. "magicAnswer"), sorted by key so the numbering order is preserved.
+ *
+ * @author Claude
+ */
+const messagesByPrefix = ( prefix: string ): MessageFunction[] =>
+    ( Object.keys( m ) as MessageKey[] )
+        .filter( ( key ) => key.startsWith( prefix ) )
+        .sort()
+        .map( ( key ) => m[ key ] );
+
+export const MAGIC_ANSWERS = messagesByPrefix( "magicAnswer" );
+export const LOVE_ANSWERS = messagesByPrefix( "loveAnswer" );
+
+/**
+ * Kept as raw keywords (not Paraglide messages): this list is used to detect
+ * love-related input regardless of the active display locale, so it also
+ * includes English terms alongside the French ones.
+ *
+ * @author Claude
+ */
 export const EASTER_EGG_KEYWORDS = [
     "amour",
     "aime",
@@ -90,7 +51,25 @@ export const EASTER_EGG_KEYWORDS = [
     "mariage",
     "love",
     "coup de foudre",
-    "sentiment"
+    "sentiment",
+    "heart",
+    "flame",
+    "kiss",
+    "darling",
+    "sweetheart",
+    "crush",
+    "romantic",
+    "seduce",
+    "seduction",
+    "desire",
+    "attraction",
+    "boyfriend",
+    "girlfriend",
+    "fiance",
+    "fiancee",
+    "marriage",
+    "wedding",
+    "feelings"
 ];
 
 export const REVEAL_VARIANTS = [ "mosaic", "flip", "fade" ] as const;

@@ -1,5 +1,6 @@
 <script lang="ts">
     import { Moon, Sun } from "@lucide/svelte";
+    import * as m from "$lib/locales/messages.js";
     import type { Theme } from "$lib/types/Theme";
 
     let { theme, onToggle }: { theme: Theme; onToggle: () => void } = $props();
@@ -12,7 +13,7 @@
         bg-[#E9E7F2] border-[#E5E7EB] motion-safe:hover:shadow-md
         dark:bg-[#4D3076] dark:border-transparent dark:motion-safe:hover:shadow-none dark:motion-safe:hover:bg-[#5a3a87]"
     onclick={onToggle}
-    aria-label="Basculer le thème de couleurs"
+    aria-label={m.themeToggleAriaLabel()}
     aria-pressed={theme === "dark"}
 >
     <div class="pointer-events-none absolute inset-0 dark:hidden">

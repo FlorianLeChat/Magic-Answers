@@ -1,5 +1,6 @@
 <script lang="ts">
     import { Dices } from "@lucide/svelte";
+    import * as m from "$lib/locales/messages.js";
 
     let {
         value = $bindable( "" ),
@@ -37,7 +38,7 @@
        border-white/70 bg-white/80 text-zinc-800 shadow-[0_12px_40px_rgba(150,120,170,0.18)] placeholder:text-zinc-500
        dark:border-violet-300/35 dark:bg-violet-950/25 dark:text-white dark:shadow-[0_0_28px_rgba(139,92,246,0.32)] dark:placeholder:text-white/70
     ${ disabled ? "cursor-not-allowed opacity-80" : "" }`}
-    placeholder="Poser une question"
+    placeholder={m.questionInputPlaceholder()}
     onkeydown={handleKeydown}
 />
 
@@ -49,7 +50,7 @@
         bg-fuchsia-200 text-zinc-700 hover:bg-fuchsia-300
         dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800
     ${ disabled ? "cursor-not-allowed opacity-60" : "" }`}
-    aria-label="Lancer la magie"
+    aria-label={m.submitButtonAriaLabel()}
 >
     <Dices class="size-4.5" />
 </button>
