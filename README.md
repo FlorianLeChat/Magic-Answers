@@ -7,12 +7,10 @@
 ![Svelte](.gitlab/badges/svelte.svg)
 ![SvelteKit](.gitlab/badges/sveltekit.svg)
 ![TailwindCSS](.gitlab/badges/tailwindcss.svg)
+![Inlang](.gitlab/badges/inlang.svg)
 ![Vite](.gitlab/badges/vite.svg)
 ![Prettier](.gitlab/badges/prettier.svg)
 ![ESLint](.gitlab/badges/eslint.svg)
-
-> [!NOTE]
-> 🥖 Unlike my other projects, this one is entirely in French and is intended only for French-speaking readers.
 
 ## In French
 

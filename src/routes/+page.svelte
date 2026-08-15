@@ -3,6 +3,7 @@
     import { Code } from "@lucide/svelte";
     import { env } from "$env/dynamic/public";
     import { asset } from "$app/paths";
+    import * as m from "$lib/locales/messages.js";
     import type { Theme } from "$lib/types/Theme";
     import { themeStore } from "$lib/theme.svelte";
     import { EASTER_EGG_KEYWORDS, LOVE_ANSWERS, MAGIC_ANSWERS, REVEAL_VARIANTS, type RevealVariant } from "$lib/data/magic-answers";
@@ -55,7 +56,7 @@
         revealVariant = randomItem( REVEAL_VARIANTS );
 
         const easter = shouldTriggerEasterEgg( question );
-        const nextAnswer = randomItem( easter ? LOVE_ANSWERS : MAGIC_ANSWERS );
+        const nextAnswer = randomItem( easter ? LOVE_ANSWERS : MAGIC_ANSWERS )();
         const delay = 1400 + Math.random() * 700;
 
         setTimeout( () =>
@@ -96,7 +97,7 @@
             rel="noopener noreferrer"
             href="https://github.com/FlorianLeChat/Magic-Answers"
             target="_blank"
-            aria-label="Lien vers le dépôt GitHub"
+            aria-label={m.header_github_link_aria_label()}
         >
             <Code />
         </a>
@@ -107,19 +108,19 @@
     <main class="flex flex-1 flex-col items-center justify-center text-center">
         <img
             src={asset( "/assets/favicons/light.png" )}
-            alt="Logo Magic Answers en thème clair"
+            alt={m.header_logo_light_alt()}
             class="dark:hidden w-21 h-21 object-contain rounded-2xl"
         />
 
         <img
             src={asset( "/assets/favicons/dark.png" )}
-            alt="Logo Magic Answers en thème sombre"
+            alt={m.header_logo_dark_alt()}
             class="hidden dark:block w-21 h-21 object-contain rounded-2xl"
         />
 
         <h1 class="mt-10 text-[2.5rem] font-semibold">Magic Answers</h1>
 
-        <p class="mt-4 text-[0.95rem] opacity-75">Demandez n'importe quoi sur votre avenir ! Magic Answers y répondra.</p>
+        <p class="mt-4 text-[0.95rem] opacity-75">{m.hero_subtitle()}</p>
 
         <fieldset class="relative mt-12 w-full max-w-145">
             <MagicInput bind:value={question} disabled={status === "generating"} onSubmit={askMagic} />
