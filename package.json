@@ -33,7 +33,7 @@
         "@tsconfig/svelte": "~5.0",
         "@tailwindcss/vite": "~4.2",
         "typescript-eslint": "~8.59",
-        "@inlang/paraglide-js": "~2.24",
+        "@inlang/paraglide-js": "~2.22",
         "eslint-plugin-svelte": "~3.17",
         "prettier-plugin-svelte": "~3.5",
         "eslint-formatter-gitlab": "~7.1",
