@@ -26,7 +26,7 @@
 {/if}
 
 <style>
-    @reference "../app.css";
+    @reference "../../app.css";
 
     .sparkle {
         @apply blur-[0.4px];

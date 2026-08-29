@@ -53,7 +53,7 @@
 {/if}
 
 <style>
-    @reference "../app.css";
+    @reference "../../app.css";
 
     .card-shell {
         @apply text-zinc-800;
