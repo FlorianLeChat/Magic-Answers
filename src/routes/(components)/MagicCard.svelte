@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { RevealVariant } from "$lib/data/magic-answers";
+    import type { RevealVariant } from "#lib/data/magic-answers.ts";
 
     let {
         answer,

@@ -1,7 +1,7 @@
 <script lang="ts">
     import { Moon, Sun } from "@lucide/svelte";
-    import * as m from "$lib/locales/messages.js";
-    import type { Theme } from "$lib/types/Theme";
+    import * as m from "#lib/locales/messages.js";
+    import type { Theme } from "#lib/types/Theme.ts";
 
     let { theme, onToggle }: { theme: Theme; onToggle: () => void } = $props();
 </script>
