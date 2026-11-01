@@ -1,12 +1,12 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { Code } from "@lucide/svelte";
-    import { env } from "$env/dynamic/public";
+    import { PUBLIC_VERSION } from "$app/env/public";
     import { asset } from "$app/paths";
-    import * as m from "$lib/locales/messages.js";
-    import type { Theme } from "$lib/types/Theme";
-    import { themeStore } from "$lib/theme.svelte";
-    import { EASTER_EGG_KEYWORDS, LOVE_ANSWERS, MAGIC_ANSWERS, REVEAL_VARIANTS, type RevealVariant } from "$lib/data/magic-answers";
+    import * as m from "#lib/locales/messages.js";
+    import type { Theme } from "#lib/types/Theme.ts";
+    import { themeStore } from "#lib/theme.svelte.ts";
+    import { EASTER_EGG_KEYWORDS, LOVE_ANSWERS, MAGIC_ANSWERS, REVEAL_VARIANTS, type RevealVariant } from "#lib/data/magic-answers.ts";
 
     import MagicCard from "./(components)/MagicCard.svelte";
     import MagicInput from "./(components)/MagicInput.svelte";
@@ -107,13 +107,13 @@
 
     <main class="flex flex-1 flex-col items-center justify-center text-center">
         <img
-            src={asset( "/assets/favicons/light.png" )}
+            src={asset( "assets/favicons/light.png" )}
             alt={m.header_logo_light_alt()}
             class="dark:hidden w-21 h-21 object-contain rounded-2xl"
         />
 
         <img
-            src={asset( "/assets/favicons/dark.png" )}
+            src={asset( "assets/favicons/dark.png" )}
             alt={m.header_logo_dark_alt()}
             class="hidden dark:block w-21 h-21 object-contain rounded-2xl"
         />
@@ -151,6 +151,6 @@
         >
             Florian
         </a>
-        ({env.PUBLIC_VERSION ?? "0.0.1"})
+        ({PUBLIC_VERSION})
     </footer>
 </div>

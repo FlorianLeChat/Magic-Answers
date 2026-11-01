@@ -1,4 +1,4 @@
-import * as m from "$lib/locales/messages.js";
+import * as m from "#lib/locales/messages.js";
 
 type MessageKey = Exclude<keyof typeof m, "m">;
 type MessageFunction = ( typeof m )[ MessageKey ];

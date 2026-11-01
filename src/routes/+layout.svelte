@@ -1,6 +1,6 @@
 <script lang="ts">
     import "../app.css";
-    import { env } from "$env/dynamic/public";
+    import { PUBLIC_ANALYTICS_ENABLED, PUBLIC_ANALYTICS_ENDPOINT, PUBLIC_ANALYTICS_PROJECT_ID, PUBLIC_ANALYTICS_RESPECT_DNT } from "$app/env/public";
     import { asset } from "$app/paths";
 
     let { children } = $props();
@@ -9,7 +9,7 @@
 <svelte:head>
     <link
         rel="icon"
-        href={asset( "/assets/favicons/light.png" )}
+        href={asset( "assets/favicons/light.png" )}
         type="image/png"
         sizes="1024x1024"
         media="(prefers-color-scheme: light)"
@@ -17,29 +17,29 @@
 
     <link
         rel="icon"
-        href={asset( "/assets/favicons/dark.png" )}
+        href={asset( "assets/favicons/dark.png" )}
         type="image/png"
         sizes="1024x1024"
         media="(prefers-color-scheme: dark)"
     />
 
-    <link rel="manifest" href={asset( "/manifest.webmanifest" )} crossorigin="use-credentials" />
+    <link rel="manifest" href={asset( "manifest.webmanifest" )} crossorigin="use-credentials" />
 
-    {#if env.PUBLIC_ANALYTICS_ENABLED === "true"}
+    {#if PUBLIC_ANALYTICS_ENABLED === "true"}
         <script
-            src={env.PUBLIC_ANALYTICS_ENDPOINT + "/script.js"}
+            src={PUBLIC_ANALYTICS_ENDPOINT + "/script.js"}
             defer
-            data-website-id={env.PUBLIC_ANALYTICS_PROJECT_ID}
+            data-website-id={PUBLIC_ANALYTICS_PROJECT_ID}
             data-performance="true"
-            data-do-not-track={env.PUBLIC_ANALYTICS_RESPECT_DNT}
+            data-do-not-track={PUBLIC_ANALYTICS_RESPECT_DNT}
             data-exclude-hash="true"
             data-exclude-search="true"
         ></script>
 
         <script
-            src={env.PUBLIC_ANALYTICS_ENDPOINT + "/recorder.js"}
+            src={PUBLIC_ANALYTICS_ENDPOINT + "/recorder.js"}
             defer
-            data-website-id={env.PUBLIC_ANALYTICS_PROJECT_ID}
+            data-website-id={PUBLIC_ANALYTICS_PROJECT_ID}
         ></script>
     {/if}
 </svelte:head>

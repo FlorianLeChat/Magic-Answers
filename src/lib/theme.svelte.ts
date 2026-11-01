@@ -1,4 +1,4 @@
-import type { Theme } from "$lib/types/Theme";
+import type { Theme } from "#lib/types/Theme.ts";
 
 const STORAGE_KEY = "COLOR_SCHEME";
 

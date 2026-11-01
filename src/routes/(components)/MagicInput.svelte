@@ -1,6 +1,6 @@
 <script lang="ts">
     import { Dices } from "@lucide/svelte";
-    import * as m from "$lib/locales/messages.js";
+    import * as m from "#lib/locales/messages.js";
 
     let {
         value = $bindable( "" ),
