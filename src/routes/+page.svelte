@@ -1,9 +1,9 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { Code } from "@lucide/svelte";
-    import { PUBLIC_VERSION } from "$app/env/public";
     import { asset } from "$app/paths";
+    import { Code } from "@lucide/svelte";
     import * as m from "#lib/locales/messages.js";
+    import { PUBLIC_VERSION } from "$app/env/public";
     import type { Theme } from "#lib/types/Theme.ts";
     import { themeStore } from "#lib/theme.svelte.ts";
     import { EASTER_EGG_KEYWORDS, LOVE_ANSWERS, MAGIC_ANSWERS, REVEAL_VARIANTS, type RevealVariant } from "#lib/data/magic-answers.ts";

@@ -10,21 +10,31 @@ export const variables = defineEnvVars( {
     PUBLIC_ANALYTICS_ENABLED: {
         public: true,
         static: true,
-        description: "Whether the Umami analytics scripts are loaded (`true` or `false`)"
+        description: "Whether the Umami analytics scripts are loaded",
+        schema: ( value ) => value === "true"
     },
     PUBLIC_ANALYTICS_ENDPOINT: {
         public: true,
         static: true,
-        description: "Base URL of the Umami analytics instance"
+        description: "Base URL of the Umami instance serving the analytics scripts",
+        schema: ( value ) => value
     },
     PUBLIC_ANALYTICS_PROJECT_ID: {
         public: true,
         static: true,
-        description: "Umami website identifier"
+        description: "Umami website identifier",
+        schema: ( value ) => value
+    },
+    PUBLIC_ANALYTICS_ENVIRONMENT: {
+        public: true,
+        static: true,
+        description: "Environment name reported to Umami with each event",
+        schema: ( value ) => value || "development"
     },
     PUBLIC_ANALYTICS_RESPECT_DNT: {
         public: true,
         static: true,
-        description: "Whether Umami respects the Do Not Track browser preference (`true` or `false`)"
+        description: "Whether analytics honour the visitor's Do Not Track and Global Privacy Control signals",
+        schema: ( value ) => value !== "false"
     }
 } );
